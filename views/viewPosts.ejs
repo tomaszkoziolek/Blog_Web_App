@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs") %>
+    <% if (locals.posty.length > 0) { %>
+        <% posty.forEach((element) => { %>
+            <h1> <%= element %> </h1>
+        <% }); %>
+    <% } else { %>
+        <h1>View</h1>
+    <% } %>
+<%- include("partials/footer.ejs") %>

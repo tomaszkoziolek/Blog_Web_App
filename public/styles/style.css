@@ -44,6 +44,7 @@ body {
 .nav-item:hover {
     background-color: gray;
     color: black;
+    cursor: pointer;
 }
 
 a {
@@ -56,4 +57,15 @@ footer {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
