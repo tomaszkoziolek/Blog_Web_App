@@ -1,6 +1,7 @@
 <%- include("partials/header.ejs") %>
 <form class="create-post-form" action="/edit" method="post">
-    <textarea id="tekst" name="tekst" rows="10" cols="50"><%= locals.post %></textarea><br><br>
-    <input type="submit" value="Edit">
+    <textarea class="tekst" name="tekst-edit" rows="10" cols="50"><%= post %></textarea><br><br>
+    <input type="hidden" name="postIndex" value="<%= index %>">
+    <input type="submit" value="Edytuj">
 </form>
 <%- include("partials/footer.ejs") %>

@@ -2,12 +2,13 @@
 <div class="posts-container">
     <% if (locals.posty.length > 0) { %>
         <% posty.forEach((element, index) => { %>
-            <div class="post" data-id="<%= index %>">
+            <div class="post">
                 <p><%= element %></p>
                 <form action="/delete/<%= index %>" method="POST">
                     <button type="submit">Usuń</button>
                 </form>
-                <form action="/edit/<%= index %>" method="POST">
+                <form action="/edit-btn" method="POST">
+                    <input type="hidden" name="postId" value="<%= index %>">
                     <button type="submit">Edytuj</button>
                 </form>
             </div>

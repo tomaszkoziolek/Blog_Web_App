@@ -31,10 +31,16 @@ app.post("/delete/:id", (req, res) => {
     res.redirect("/viewPosts");
 });
 
-app.post("/edit/:id", (req, res) => {
-    const postId = req.params.id;
-    // console.log(postId);
-    res.render("edytujPost.ejs", {post: posty[postId]});
+app.post("/edit-btn", (req, res) => {
+    const idPostu = req.body.postId;
+    let postValue = posty[idPostu];
+    // console.log(postValue);
+    res.render("edytujPost.ejs", {post: postValue, index: idPostu});
+});
+
+app.post("/edit", (req, res) => {
+    posty[req.body.postIndex] = req.body["tekst-edit"];
+    res.redirect("/viewPosts");
 });
 
 app.listen(3000, () => {
