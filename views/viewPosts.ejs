@@ -1,9 +1,16 @@
 <%- include("partials/header.ejs") %>
+<div class="posts-container">
     <% if (locals.posty.length > 0) { %>
-        <% posty.forEach((element) => { %>
-            <h1> <%= element %> </h1>
+        <% posty.forEach((element, index) => { %>
+            <div class="post" data-id="<%= index %>">
+                <p><%= element %></p>
+                <form action="/delete/<%= index %>" method="POST">
+                    <button type="submit">Usuń</button>
+                </form>
+            </div>
         <% }); %>
     <% } else { %>
-        <h1>View</h1>
+        <h1>Brak postów</h1>
     <% } %>
+</div>
 <%- include("partials/footer.ejs") %>

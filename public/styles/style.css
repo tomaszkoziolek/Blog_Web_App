@@ -59,7 +59,7 @@ footer {
     transform: translateX(-50%);
 }
 
-form {
+#create-post-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,3 +69,43 @@ form {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.posts-container {
+    display: grid;
+}
+
+.post {
+    text-align: center;
+    background-color: red;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .posts-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 15%;
+        width: 90%;
+        height: 77%;
+        overflow-y: auto;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: 150px;
+        grid-gap: 20px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .posts-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 18%;
+        width: 90%;
+        height: 77%;
+        overflow-y: auto;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        grid-auto-rows: 300px;
+        grid-gap: 50px;
+    }
+  }
