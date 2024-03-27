@@ -1,0 +1,6 @@
+<%- include("partials/header.ejs") %>
+<form class="create-post-form" action="/edit" method="post">
+    <textarea id="tekst" name="tekst" rows="10" cols="50"><%= locals.post %></textarea><br><br>
+    <input type="submit" value="Edit">
+</form>
+<%- include("partials/footer.ejs") %>
