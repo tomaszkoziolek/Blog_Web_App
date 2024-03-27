@@ -31,6 +31,12 @@ app.post("/delete/:id", (req, res) => {
     res.redirect("/viewPosts");
 });
 
+app.post("/edit/:id", (req, res) => {
+    const postId = req.params.id;
+    // console.log(postId);
+    res.render("edytujPost.ejs", {post: posty[postId]});
+});
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 });

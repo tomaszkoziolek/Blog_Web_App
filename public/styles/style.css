@@ -59,7 +59,7 @@ footer {
     transform: translateX(-50%);
 }
 
-#create-post-form {
+.create-post-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
