@@ -27,7 +27,8 @@ app.post("/submit", (req, res) => {
 
 app.post("/delete/:id", (req, res) => {
     const postId = req.params.id;
-    res.render("potwierdzUsuniecie.ejs", {index: postId});
+    posty.splice(postId, 1);
+    res.redirect("/viewPosts");
 });
 
 app.post("/edit-btn", (req, res) => {
@@ -40,18 +41,6 @@ app.post("/edit-btn", (req, res) => {
 app.post("/edit", (req, res) => {
     posty[req.body.postIndex] = req.body["tekst-edit"];
     res.redirect("/viewPosts");
-});
-
-app.post("/deleteConfirm", (req, res) => {
-    const postId = req.body.postIndex;
-    const confirmed = req.body.confirmed;
-
-    if (confirmed === "true") {
-        posty.splice(postId, 1);
-        res.redirect("/viewPosts");
-    } else {
-        res.redirect("/viewPosts");
-    }
 });
 
 app.listen(3000, () => {
