@@ -1,11 +1,3 @@
 <%- include("partials/header.ejs") %>
-<div class="posts-container">
-    <div class="default">Czy na pewno chcesz usunąć ten post?
-        <form action="/deleteConfirm" method="POST">
-            <input type="hidden" name="postIndex" value="<%= index %>">
-            <button type="submit" name="confirmed" value="true">Usuń</button>
-            <button type="submit" name="confirmed" value="false">Anuluj</button>
-        </form>
-    </div>
-</div>
+       
 <%- include("partials/footer.ejs") %>
